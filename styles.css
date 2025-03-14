@@ -1,0 +1,257 @@
+/* Базовые стили */
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+button {
+    padding: 0;
+    border: none;
+    font: inherit;
+    color: inherit;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+:root {
+    --bg-color: #171616;
+    --font-color: #ffffff;
+    --footer-color: #333333;
+    --button-color: #252121;
+}
+
+a {
+    color: var(--font-color);
+}
+
+body {
+    font-family: "Inria Serif", serif;
+    background-color: var(--bg-color);
+    color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+h1 {
+    font-size: 100px;
+}
+
+h2 {
+    font-size: 60px;
+}
+
+a,
+p {
+    font-size: 30px;
+}
+
+.header {
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+.header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    gap: 70px;
+    justify-content: center;
+    list-style: none;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+    padding-left: 300px;
+    padding-right: 300px;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.slider {
+    display: flex;
+    overflow-x: auto;
+    gap: 50px;
+    scroll-snap-type: x mandatory;
+    cursor: grab;
+    user-select: none;
+}
+
+.slider__photo {
+    height: 512px;
+    scroll-snap-align: start;
+    pointer-events: none;
+}
+
+footer {
+    padding: 70px 300px 70px 300px;
+    background-color: var(--footer-color);
+}
+
+.navbar__button {
+    background-color: var(--button-color);
+    padding: 12px 16px;
+    border-radius: 20px;
+}
+
+.navbar__button a {
+    text-decoration: none;
+    font-size: 24px;
+}
+
+.theme {
+    background-color: var(--button-color);
+    padding: 16px 20px;
+    height: 70px;
+    border-radius: 20px;
+    font-size: 30px;
+    width: 240px;
+    text-wrap: nowrap;
+}
+
+/* Медиа-запрос для экранов шириной до 1024px */
+@media (max-width: 1024px) {
+    .header {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+
+    main {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+
+    footer {
+        padding: 70px 150px 70px 150px;
+    }
+
+    h1 {
+        font-size: 80px;
+    }
+
+    h2 {
+        font-size: 50px;
+    }
+
+    a,
+    p {
+        font-size: 24px;
+    }
+
+    .navbar {
+        gap: 50px;
+    }
+
+    .slider__photo {
+        height: 400px;
+    }
+
+    .theme {
+        font-size: 24px;
+        padding: 12px 16px;
+        height: 100px;
+    }
+}
+
+/* Медиа-запрос для экранов шириной до 768px */
+@media (max-width: 768px) {
+    .header {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    main {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    footer {
+        padding: 50px;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+
+    h2 {
+        font-size: 40px;
+    }
+
+    a,
+    p {
+        font-size: 20px;
+    }
+
+    .navbar {
+        gap: 20px;
+    }
+
+    .slider__photo {
+        height: 300px;
+    }
+
+    .theme {
+        font-size: 24px;
+        padding: 12px 16px;
+        height: 60px;
+    }
+
+    .navbar__button a {
+        font-size: 20px;
+    }
+}
+
+
+
+.navbar__button {
+  background-color: var(--button-color);
+  padding: 12px 16px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.navbar__button:hover {
+  background-color: #444; /* Изменение цвета фона при наведении */
+  transform: scale(1.05); /* Легкое увеличение кнопки */
+}
+
+.theme {
+  background-color: var(--button-color);
+  padding: 16px 20px;
+  height: 70px;
+  border-radius: 20px;
+  font-size: 30px;
+  width: 240px;
+  text-wrap: nowrap;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.theme:hover {
+  background-color: #444; /* Изменение цвета фона при наведении */
+  transform: scale(1.05); /* Легкое увеличение кнопки */
+}
+
+body.light-theme {
+  --bg-color: #f4f4f4;
+  --font-color: #333;
+  --footer-color: #ddd;
+  --button-color: #ccc;
+}
